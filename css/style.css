@@ -1,0 +1,256 @@
+/* Farbvariablen */
+:root {
+    --eierschalenWeiss: #eeeeee;
+    --hellesGrau: #d7d7d7;
+    --dunklesGrau: #5c5c5c;
+    --sehrDunklesGrau: #262626;
+    --schwarz: #111111;
+}
+
+@font-face {
+    font-family: "centuryGothicNormal";
+    src: url("../data/fnts/GOTHIC.TTF");
+}
+
+@font-face {
+    font-family: "centuryGothicBold";
+    src: url("../data/fnts/GOTHICB.TTF");
+}
+
+.filterEierschalenWeiss {
+    filter: invert(100%) sepia(83%) saturate(275%) hue-rotate(198deg) brightness(117%) contrast(87%);
+}
+
+.filterSchwarz {
+    filter: invert(0%) sepia(28%) saturate(2796%) hue-rotate(354deg) brightness(125%) contrast(87%);
+}
+
+/* Formatierung von <a> aendern */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0 0;
+    height: 100%;
+    font-family: "centuryGothicNormal", sans-serif;
+    font-size: 62.5%;
+    color: var(--schwarz);
+    background-color: var(--eierschalenWeiss);
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 25em;
+    background-color: var(--dunklesGrau);
+    color: var(--eierschalenWeiss)
+}
+
+#bodyContent {
+    margin: 0 20%;
+}
+
+#DivProfilBild {
+    padding-top: 1.5em;
+    padding-right: 2%;
+}
+
+#profilBild {
+    max-height: 75%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2%;
+    border-color: var(--eierschalenWeiss);
+}
+
+#kontaktDaten {
+    display: grid;
+    height: 8em;
+    padding-top: 4em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2em;
+    row-gap: 0;
+    font-size: 1.3em;
+}
+
+.kontaktDatenElement {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.headerIcon {
+    height: 30%;
+    margin-right: 0.8em;
+}
+
+#DivTitelImHeader {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 18em;
+    text-align: center;
+}
+
+#titelImHeader {
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+#mainContent {
+    display: flex;
+    width: 100%;
+}
+
+#linkeSeite {
+    width: 50%;
+    margin-top: 2em;
+    margin-right: 2em;
+    padding-left: 2em;
+    background-color: var(--hellesGrau);
+}
+
+#rechteSeite {
+    width: 50%;
+    margin-top: 2em;
+}
+
+h2.abschnittsUeberschrift {
+    font-size: 1.8em;
+    font-family: "centuryGothicBold";
+    color: var(--schwarz);
+}
+
+h3.abschnittsSubUeberschrift {
+    font-size: 1.6em;
+    font-family: "centuryGothicBold";
+    color: var(--sehrDunklesGrau);
+}
+
+#relevanteKenntnisse {
+    display: block;
+}
+
+ul li {
+    font-size: 1.8em;
+    text-align: justify;
+    padding-right: 1.5em;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+.divBulletPointsList {
+    position: relative;
+}
+
+.bulletPointLinieStart {
+    position: absolute;
+    height: 98%;
+    border: solid var(--schwarz) 0.1em;
+    top: 0.55em;
+    left: -0.88em;
+}
+
+.bulletPointTitel {
+    font-size: 0.9em;
+    font-family: "centuryGothicBold";
+    color: var(--schwarz);
+}
+
+.bulletPointSubTitel {
+    font-size: 0.8em;
+    font-family: "centuryGothicBold";
+    color: var(--sehrDunklesGrau);
+}
+
+.bulletPointText {
+    font-size: 0.7em;
+    color: var(--sehrDunklesGrau);
+}
+
+#relevanteKenntnisse {
+    min-width: 55%;
+}
+
+.relevanteKenntnis {
+    font-size: 0.82em;
+    font-family: "centuryGothicBold";
+    color: var(--sehrDunklesGrau);
+}
+
+.relevanteKenntnisListItem {
+    list-style-type: none;
+}
+
+.divRelevanteKenntnisListItemInhalt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.relevanteKenntnisText {
+    font-size: 0.8em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+#aktuellesDatum {
+    font-size: 1.5em;
+    padding-left: 2%;
+}
+
+#unterschrift {
+    width: 13em;
+    height: auto;
+    padding-right: 2%;
+}
+
+/* Media Queries fuer responsives Design */
+@media (max-width: 1150px) {
+    
+    :root {
+        font-size: 90%;
+    }
+
+    #mainContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    #linkeSeite, #rechteSeite {
+        padding: 0;
+        padding-left: 1em;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .bulletPointLinieStart {
+        left: -0.96em;
+    }
+}
